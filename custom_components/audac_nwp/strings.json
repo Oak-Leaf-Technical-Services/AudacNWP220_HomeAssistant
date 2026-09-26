@@ -1,0 +1,40 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect an AUDAC NWP220",
+        "description": "Enter the panel hostname or IPv4 address. Uses native UDP port 8711. Enable advanced options to change the port.",
+        "data": {"host": "Host", "port": "UDP port"}
+      },
+      "reconfigure": {
+        "title": "Change connection settings",
+        "description": "Use this when the same panel changes IP address. Existing device and entity identities are preserved.",
+        "data": {"host": "Host", "port": "UDP port"}
+      }
+    },
+    "error": {"cannot_connect": "Cannot read the NWP220. Check the host, UDP port, network access and firmware support for grouped commands."},
+    "abort": {
+      "already_configured": "This host is already configured.",
+      "reconfigure_successful": "Connection settings updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling",
+        "description": "One poll reads all core controls using five grouped requests.",
+        "data": {"scan_interval": "Polling interval (seconds)"}
+      }
+    }
+  },
+  "services": {
+    "send_command": {
+      "name": "Send command",
+      "description": "Send one ASCII request to the selected panel and read back state. Addresses are replaced by the integration.",
+      "fields": {
+        "device_id": {"name": "Device", "description": "Select the NWP220 panel."},
+        "command": {"name": "Command", "description": "One complete GET_REQ or SET_REQ frame; line termination is optional."}
+      }
+    }
+  }
+}

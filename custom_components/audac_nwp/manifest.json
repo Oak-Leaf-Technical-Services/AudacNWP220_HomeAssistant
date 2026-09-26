@@ -1,0 +1,12 @@
+{
+  "domain": "audac_nwp",
+  "name": "AUDAC NWP",
+  "codeowners": ["@Oak-Leaf-Technical-Services"],
+  "config_flow": true,
+  "documentation": "https://github.com/Oak-Leaf-Technical-Services/AudacNWP220_HomeAssistant",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/Oak-Leaf-Technical-Services/AudacNWP220_HomeAssistant/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

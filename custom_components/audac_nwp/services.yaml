@@ -1,0 +1,20 @@
+send_command:
+  name: Send command
+  description: Send one native ASCII GET_REQ or SET_REQ. The integration replaces addressing and refreshes state. No automatic write retries.
+  fields:
+    device_id:
+      name: Device
+      description: The NWP220 panel to send the command to.
+      required: true
+      selector:
+        device:
+          filter:
+            - integration: audac_nwp
+          multiple: true
+    command:
+      name: Command
+      description: One complete AUDAC ASCII frame. Line termination is added if omitted. Unknown command payloads are redacted from debug logs.
+      required: true
+      example: "#|NWP220||GET_REQ^ALL_OUT^ROUTE||U|"
+      selector:
+        text:
