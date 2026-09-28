@@ -30,6 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: hacs/action@main
+        env:
+          # Validate this revision even if the branch advances during the run.
+          REPOSITORY_REF: ${{ github.event.pull_request.head.sha || github.sha }}
         with:
           category: integration
           ignore: brands
